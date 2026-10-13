@@ -1,0 +1,460 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Milk Tea & Beverage Shop POS</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- Application Header -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">🧋</div>
+
+        <div>
+          <h1>Milk Tea & Beverage</h1>
+          <p>Point of Sale System</p>
+        </div>
+      </div>
+
+      <div class="terminal-status">
+        <span class="status-dot"></span>
+        Cashier Terminal
+      </div>
+    </div>
+  </header>
+
+  <!-- Main POS Layout -->
+  <main class="pos-layout">
+
+    <!-- Product Catalog -->
+    <section class="catalog-section" aria-labelledby="catalog-title">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">MENU SELECTION</p>
+          <h2 id="catalog-title">Our Beverages</h2>
+          <p class="section-description">
+            Select a drink to add it to the current order.
+          </p>
+        </div>
+
+        <span class="product-count">6 Products</span>
+      </div>
+
+      <div class="product-grid" id="product-grid">
+
+        <!-- Classic Milk Tea -->
+        <article class="product-card">
+          <div class="product-image image-classic">
+            <span class="drink-art" aria-hidden="true">🧋</span>
+          </div>
+
+          <div class="product-details">
+            <span class="product-category">MILK TEA</span>
+            <h3>Classic Milk Tea</h3>
+            <p class="product-variant">Regular</p>
+
+            <div class="product-footer">
+              <span class="product-price">₱59.00</span>
+              <button
+                type="button"
+                class="add-button"
+                data-product-id="classic"
+                aria-label="Add Classic Milk Tea"
+              >
+                <span aria-hidden="true">+</span> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Wintermelon Milk Tea -->
+        <article class="product-card">
+          <div class="product-image image-wintermelon">
+            <span class="drink-art" aria-hidden="true">🧋</span>
+          </div>
+
+          <div class="product-details">
+            <span class="product-category">MILK TEA</span>
+            <h3>Wintermelon Milk Tea</h3>
+            <p class="product-variant">Regular</p>
+
+            <div class="product-footer">
+              <span class="product-price">₱65.00</span>
+              <button
+                type="button"
+                class="add-button"
+                data-product-id="wintermelon"
+                aria-label="Add Wintermelon Milk Tea"
+              >
+                <span aria-hidden="true">+</span> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Taro Milk Tea -->
+        <article class="product-card">
+          <div class="product-image image-taro">
+            <span class="drink-art" aria-hidden="true">🧋</span>
+          </div>
+
+          <div class="product-details">
+            <span class="product-category">MILK TEA</span>
+            <h3>Taro Milk Tea</h3>
+            <p class="product-variant">Regular</p>
+
+            <div class="product-footer">
+              <span class="product-price">₱65.00</span>
+              <button
+                type="button"
+                class="add-button"
+                data-product-id="taro"
+                aria-label="Add Taro Milk Tea"
+              >
+                <span aria-hidden="true">+</span> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Lychee Fruit Tea -->
+        <article class="product-card">
+          <div class="product-image image-lychee">
+            <span class="drink-art" aria-hidden="true">🥤</span>
+          </div>
+
+          <div class="product-details">
+            <span class="product-category">FRUIT TEA</span>
+            <h3>Fruit Tea — Lychee</h3>
+            <p class="product-variant">Regular</p>
+
+            <div class="product-footer">
+              <span class="product-price">₱55.00</span>
+              <button
+                type="button"
+                class="add-button"
+                data-product-id="lychee"
+                aria-label="Add Lychee Fruit Tea"
+              >
+                <span aria-hidden="true">+</span> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Brown Sugar Milk Tea -->
+        <article class="product-card">
+          <div class="product-image image-brown-sugar">
+            <span class="drink-art" aria-hidden="true">🧋</span>
+          </div>
+
+          <div class="product-details">
+            <span class="product-category">MILK TEA</span>
+            <h3>Brown Sugar Milk Tea</h3>
+            <p class="product-variant">Regular</p>
+
+            <div class="product-footer">
+              <span class="product-price">₱69.00</span>
+              <button
+                type="button"
+                class="add-button"
+                data-product-id="brown-sugar"
+                aria-label="Add Brown Sugar Milk Tea"
+              >
+                <span aria-hidden="true">+</span> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bottled Water -->
+        <article class="product-card">
+          <div class="product-image image-water">
+            <span class="drink-art" aria-hidden="true">💧</span>
+          </div>
+
+          <div class="product-details">
+            <span class="product-category">WATER</span>
+            <h3>Bottled Water</h3>
+            <p class="product-variant">1 Bottle</p>
+
+            <div class="product-footer">
+              <span class="product-price">₱20.00</span>
+              <button
+                type="button"
+                class="add-button"
+                data-product-id="water"
+                aria-label="Add Bottled Water"
+              >
+                <span aria-hidden="true">+</span> Add
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Current Order -->
+    <aside class="order-panel" aria-labelledby="order-title">
+
+      <div class="order-header">
+        <div>
+          <p class="eyebrow">CHECKOUT</p>
+          <h2 id="order-title">Current Order</h2>
+        </div>
+
+        <span class="item-count" id="item-count">0 Items</span>
+      </div>
+
+      <!-- Cart Message -->
+      <div
+        id="cart-feedback"
+        class="feedback-message"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
+
+      <!-- Empty Cart -->
+      <div id="empty-cart" class="empty-cart">
+        <div class="empty-icon" aria-hidden="true">🛒</div>
+        <h3>Your cart is empty</h3>
+        <p>
+          Choose a beverage from the menu
+          to start a new order.
+        </p>
+      </div>
+
+      <!-- Cart Items -->
+      <div id="cart-items" class="cart-items" aria-live="polite">
+      </div>
+
+      <!-- Template for JavaScript Cart Items -->
+      <template id="cart-item-template">
+        <article class="cart-item">
+          <div class="cart-item-top">
+            <div class="cart-item-info">
+              <h3 class="cart-item-name"></h3>
+              <p class="cart-item-price"></p>
+            </div>
+
+            <button
+              type="button"
+              class="remove-button"
+              aria-label="Remove item"
+              title="Remove item"
+            >
+              &times;
+            </button>
+          </div>
+
+          <div class="cart-item-bottom">
+            <div class="quantity-control">
+              <button
+                type="button"
+                class="quantity-button decrease-button"
+                aria-label="Decrease quantity"
+              >−</button>
+
+              <span class="quantity-value">1</span>
+
+              <button
+                type="button"
+                class="quantity-button increase-button"
+                aria-label="Increase quantity"
+              >+</button>
+            </div>
+
+            <strong class="cart-item-subtotal">₱0.00</strong>
+          </div>
+        </article>
+      </template>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <div class="summary-row">
+          <span>Items Subtotal</span>
+          <span id="subtotal-display">₱0.00</span>
+        </div>
+
+        <div class="summary-total">
+          <span>Total Amount</span>
+          <strong id="total-display">₱0.00</strong>
+        </div>
+      </div>
+
+      <!-- Payment Section -->
+      <section class="payment-section" aria-labelledby="payment-title">
+        <h3 id="payment-title">Cash Payment</h3>
+
+        <form id="payment-form" novalidate>
+          <label for="cash-input">Amount Received</label>
+
+          <div class="cash-input-wrapper">
+            <span class="peso-prefix">₱</span>
+            <input
+              type="text"
+              id="cash-input"
+              name="cash"
+              inputmode="decimal"
+              autocomplete="off"
+              placeholder="0.00"
+              aria-describedby="payment-error"
+            >
+          </div>
+
+          <p
+            id="payment-error"
+            class="payment-error"
+            role="alert"
+            hidden
+          ></p>
+
+          <div class="change-preview">
+            <span>Change</span>
+            <strong id="change-display">₱0.00</strong>
+          </div>
+
+          <button
+            type="submit"
+            id="confirm-payment"
+            class="primary-button"
+            disabled
+          >
+            Confirm Payment
+          </button>
+        </form>
+      </section>
+
+    </aside>
+  </main>
+
+  <!-- Payment Success Modal -->
+  <div id="success-modal" class="modal-overlay" hidden>
+    <section
+      class="success-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="success-title"
+      aria-describedby="success-description"
+    >
+      <div class="success-icon" aria-hidden="true">✓</div>
+
+      <h2 id="success-title">Payment Successful!</h2>
+
+      <p id="success-description" class="success-description">
+        The transaction has been completed successfully.
+      </p>
+
+      <div class="success-details">
+        <div>
+          <span>Total Amount</span>
+          <strong id="success-total">₱0.00</strong>
+        </div>
+
+        <div>
+          <span>Cash Received</span>
+          <strong id="success-cash">₱0.00</strong>
+        </div>
+
+        <div class="success-change">
+          <span>Change</span>
+          <strong id="success-change">₱0.00</strong>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        id="view-receipt-button"
+        class="primary-button"
+      >
+        View Digital Receipt
+      </button>
+    </section>
+  </div>
+
+  <!-- Digital Receipt Modal -->
+  <div id="receipt-modal" class="modal-overlay" hidden>
+    <section
+      class="receipt-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="receipt-title"
+    >
+      <div class="receipt-heading">
+        <div class="receipt-logo" aria-hidden="true">🧋</div>
+        <h2 id="receipt-title">Milk Tea & Beverage</h2>
+        <p>Digital Transaction Receipt</p>
+      </div>
+
+      <div class="receipt-meta">
+        <div>
+          <span>Transaction Reference</span>
+          <strong id="receipt-reference">—</strong>
+        </div>
+
+        <div>
+          <span>Date &amp; Time</span>
+          <strong id="receipt-date">—</strong>
+        </div>
+      </div>
+
+      <div class="receipt-table-wrapper">
+        <table class="receipt-table">
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Price</th>
+              <th scope="col">Subtotal</th>
+            </tr>
+          </thead>
+
+          <tbody id="receipt-items">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="receipt-totals">
+        <div>
+          <span>Total Amount</span>
+          <strong id="receipt-total">₱0.00</strong>
+        </div>
+
+        <div>
+          <span>Cash Paid</span>
+          <strong id="receipt-cash">₱0.00</strong>
+        </div>
+
+        <div class="receipt-change">
+          <span>Change</span>
+          <strong id="receipt-change">₱0.00</strong>
+        </div>
+      </div>
+
+      <p class="receipt-thanks">
+        Thank you for your purchase!
+      </p>
+
+      <button
+        type="button"
+        id="new-transaction-button"
+        class="primary-button"
+      >
+        New Transaction
+      </button>
+    </section>
+  </div>
+
+</body>
+</html>
